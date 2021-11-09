@@ -1,0 +1,34 @@
+ a = []
+ i = 0
+ while a.length <= 5
+     puts "nhập vào -1 để dừng nhập"
+     puts "Nhap gia tri phan tu thu #{i+1}:"
+     print "a[#{i}] = "
+     x = gets.chomp
+     loop do
+        unless x == "0" || x.to_f > 0 || x == "-1"
+          puts "Gia tri phan tu phai la so tu nhien. Moi ban nhap lai:"
+          print "a[#{i}] = "
+          x = gets.chomp
+        else
+          break
+        end
+      end
+    x = x.to_f
+
+    if x == -1  
+        break 
+    else
+        a.push(x)
+        i += 1
+   end
+end  
+
+puts "Mang cua ban la: #{a}"
+
+min = a[0]
+a.each do |item|
+  min = item if item < min 
+end
+puts min
+
