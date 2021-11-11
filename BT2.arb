@@ -1,0 +1,72 @@
+class NhanVien
+        attr_reader :stt, :id, :ten, :namsinh, :chucvu
+        def initialize(thongtin = {})
+            @stt = thongtin[:stt]
+            @id = thongtin[:id]
+            @ten = thongtin[:ten]
+            @namsinh = thongtin[:namsinh]
+            @chucvu = thongtin[:chucvu]
+            @luong1n = thongtin[:luong1n]
+            @ngaylm = thongtin[:ngaylm]
+
+        end
+
+        def tinhtuoi
+            Time.now.year - @namsinh
+        end 
+
+        def hienthithongtin
+            puts "STT: #{@stt} | ID: #{@id} | Họ và Tên: #{@ten} | Tuổi: #{self.tinhtuoi} | Chức danh: #{@chucvu} | Lương: #{self.tinhluong} "
+        end 
+        
+        private
+        def tinhluong
+            @luong1n * @ngaylm
+        end
+    end
+    def nhapthongtin
+        thongtin = Hash.new
+        puts "======= Nhập thông tin nhân viên ======="
+        puts "Nhập số thứ tự của bạn:"
+        thongtin[:stt] = gets.chomp
+        puts "Nhập id của bạn:"
+        thongtin[:id] = gets.chomp
+        puts "Họ và Tên:"
+        thongtin[:ten] = gets.chomp
+        puts "Năm sinh"
+        thongtin[:namsinh] = gets.chomp.to_i
+        puts "Chức vụ:"
+        thongtin[:chucvu] = gets.chomp
+        puts "Lương 1 ngày:"
+        thongtin[:luong1n] = gets.chomp.to_i
+        puts "Số ngày làm:"
+        thongtin[:ngaylm] = gets.chomp.to_i
+        return thongtin
+    end
+    nv = []
+    loop do
+    print "\n"
+    puts '''-------- QL Thông Tin Nhân Viên--------
+        * Nhập 0 để thoát
+        * Nhập 1 để thêm thông tin nhân viên
+        * Nhập 2 để hiển thị thông tin nhân viên
+    '''
+    print "Lựa chọn của bạn là: "
+    chon = gets.chomp
+    case chon
+        when "1"
+            thongtin = nhapthongtin
+            newnv = NhanVien.new(thongtin)
+            nv << newnv
+        when "2"
+            print "Nhập ID nhân viên: "
+            id_nhanvien = gets.chomp
+            kq = nv.select { |thongtin| thongtin.id == id_nhanvien }
+            puts "---------- THONG TIN NHAN VIEN ----------"
+            kq[0] ? kq[0].hienthithongtin : (puts "404 STAFF NOT FOUND!")
+        when "0" then break
+        else 
+            puts"Vui lòng nhập lại."
+        end
+end
+
