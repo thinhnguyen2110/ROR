@@ -1,0 +1,11 @@
+require 'set'
+def two_sum(number, target)
+  res = Set.new
+  number.each do |int|
+    return [target - int, int] if res.include?(target - int)
+    res.add(int)
+  end
+  nil
+end
+
+puts two_sum([3, 5, -4, 8, 11, 1, -1, 6], 10)
