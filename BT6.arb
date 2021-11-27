@@ -9,3 +9,10 @@ def two_sum(number, target)
 end
 
 puts two_sum([3, 5, -4, 8, 11, 1, -1, 6], 10)
+
+# Code e ngắn gọn, dễ đọc, dễ hiểu, giải thuật ok
+# Biến number của e nên là số nhiều nhé
+# Khi e sử dụng biến res để chứa mảng con và dùng include? cũng ok, nhưng vd sau này mảng có hàng triệu phần tử mà e sử dụng include? như vậy
+# sẽ chạy hơi lâu nhé
+# File của mình sẽ là .rb thay vì .arb
+# Format commit github của e chưa đúng
