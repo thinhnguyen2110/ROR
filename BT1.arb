@@ -1,6 +1,6 @@
- a = []
- i = 0
- while a.length <= 5
+ a = [] # biến cần đặt có ý nghĩa hơn, biến chứa nhiều phần tử nên là số nhiều
+ i = 0 # biến cần đặt có ý nghĩa, trừ trường hợp trong vòng for
+ while a.length <= 5 # a nhớ là 99 mà e
      puts "nhập vào -1 để dừng nhập"
      puts "Nhap gia tri phan tu thu #{i+1}:"
      print "a[#{i}] = "
@@ -16,7 +16,7 @@
       end
     x = x.to_f
 
-    if x == -1  
+    if x == -1  # -1 e có thể khai báo là hằng số để dễ đọc nhé. vd: STOP_SIGNAL = -1
         break 
     else
         a.push(x)
@@ -32,3 +32,17 @@ a.each do |item|
 end
 puts min
 
+# Chương trình e viết gọn gàng, nhưng cần đọc kỹ đề bài hơn nhé e. Sau khi e đọc và implement yêu cầu của KH sẽ quan trọng lắm ah.
+# Vẫn còn bug khi user input không đúng nhé, và mình đang nhập số nguyên int nhưng e lại dùng .to_f là output ra không đúng với giá trị ban đầu
+# V
+# nhập vào -1 để dừng nhập
+# Nhap gia tri phan tu thu 1:
+# a[0] = 9abcabc
+# nhập vào -1 để dừng nhập
+# Nhap gia tri phan tu thu 2:
+# a[1] = 3+1
+# nhập vào -1 để dừng nhập
+# Nhap gia tri phan tu thu 3:
+# a[2] = -1
+# Mang cua ban la: [9.0, 3.0]
+# 3.0
