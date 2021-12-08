@@ -44,3 +44,11 @@ def input_array_length
     print "\n"
     i += 1
   end
+  
+ # Code e viết trình bày dễ hiểu, biết tách hàm là một điểm cộng
+# A có vài góp ý nhỏ:
+# 1. Tên biến e cần đặt có ý nghĩa hơn. VD: biến n, 
+# 2. Với những biến chứa nhiều phần tử nên là số nhiều. VD: my_array. Khi đọc a hơi confuse do e khai báo 2 biến này đều là mảng,
+# nhưng 1 biến số ít, 1 biến số nhiều (sub_array vs sub_arrays)
+# 3. Sau a thấy bài của e và bạn thông giống nhau ah e. 
+# 4. 
