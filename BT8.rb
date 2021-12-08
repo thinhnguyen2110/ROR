@@ -19,3 +19,8 @@ array = Set[5, 1, 22, 26, 6, -1, 8, 10]
 subarray = Set[1, 6, -1, 10]
 puts check_subarray(array,subarray)
 
+# E sử dụng set vẫn được nhé e, vì a kg có giới hạn e xài gì cả
+# Nhưng mong muốn của a là e sẽ viết được hàm check_subarray như ở trên ah, vì như vậy mình có thể control và sau này nếu muốn thì có thể optimize
+# phần mà mình viết
+# Hàm check_subarray của e đang sử dụng include? -> trên lý thuyết thì include? cũng sẽ duyệt qua các phần tử trong mảng giống như vòng for nhé e
+# Cả array và subarray đều là mảng chứ nhiều phần tử -> nên là số nhiều
